@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "id": "promboard.room-acoustics",
+  "version": "1.0.0",
+  "name": "공간 울림 · 잡음 줄이기",
+  "description": "소리에 욕실 · 거실 · 성당 같은 실제 공간의 울림을 입히거나, 말소리 뒤의 잡음을 줄인다. 오픈소스 pyroomacoustics(MIT)의 방 시뮬레이션과 잡음 줄이기 기능을 쓴다. 켜면 렌더 탭 소리 클립 메뉴 [오디오 효과]에도 뜬다. AI 모델 없이 CPU 로 몇 초 안에 끝난다.",
+  "author": "PromBoard",
+  "license": "MIT",
+  "app": ">=1.0.2",
+  "repository": "https://github.com/promboard-app/room-acoustics",
+  "icon": "icon.png",
+  "contents": ["nodes"],
+  "nodes": [
+    {
+      "id": "room-acoustics",
+      "label": "공간 울림 · 잡음 줄이기",
+      "description": "연결한 소리에 고른 공간의 울림을 입히거나(공간 울림) 잡음을 줄인다(잡음 줄이기). 결과는 WAV 다. 공간 울림은 스테레오로 나오고 끝에 울림 꼬리가 붙는다. 읽는 형식은 wav · mp3 · flac · ogg 이고, 한 번에 10분까지다.",
+      "renderEffect": "audio",
+      "inputs": [
+        { "id": "audio", "type": "audio", "label": "원래 소리", "required": true }
+      ],
+      "outputs": [
+        { "id": "audio", "type": "audio", "label": "바꾼 소리" }
+      ],
+      "settings": [
+        {
+          "id": "mode",
+          "label": "모드",
+          "help": "공간 울림은 고른 공간에서 녹음한 것처럼 울림을 입힌다. 잡음 줄이기는 말소리 뒤의 '쉬—' 하는 잡음을 줄인다.",
+          "type": "select",
+          "options": [
+            { "value": "reverb", "label": "공간 울림" },
+            { "value": "denoise", "label": "잡음 줄이기" }
+          ],
+          "default": "reverb"
+        },
+        {
+          "id": "space",
+          "label": "공간",
+          "help": "공간 울림일 때만 쓴다. 욕실은 짧고 또렷하게, 성당 · 터널은 길게 울린다.",
+          "type": "select",
+          "options": [
+            { "value": "bathroom", "label": "욕실" },
+            { "value": "small-room", "label": "작은 방" },
+            { "value": "living-room", "label": "거실" },
+            { "value": "hall", "label": "강당" },
+            { "value": "cathedral", "label": "성당" },
+            { "value": "tunnel", "label": "터널" }
+          ],
+          "default": "living-room"
+        },
+        {
+          "id": "distance",
+          "label": "거리",
+          "help": "공간 울림일 때만 쓴다. 소리 나는 곳에서 듣는 사람까지의 거리다. 멀수록 울림이 커지고 소리가 멀게 들린다.",
+          "type": "select",
+          "options": [
+            { "value": "near", "label": "가까이" },
+            { "value": "mid", "label": "보통" },
+            { "value": "far", "label": "멀리" }
+          ],
+          "default": "mid"
+        },
+        {
+          "id": "strength",
+          "label": "잡음 줄이기 세기",
+          "help": "잡음 줄이기일 때만 쓴다. 강할수록 잡음이 더 줄지만 말소리가 뭉개질 수 있다. 말소리에 맞춘 방식이라 음악에는 약하게를 권한다.",
+          "type": "select",
+          "options": [
+            { "value": "light", "label": "약하게" },
+            { "value": "normal", "label": "보통" },
+            { "value": "strong", "label": "강하게" }
+          ],
+          "default": "normal"
+        }
+      ]
+    }
+  ],
+  "python": {
+    "version": "3.12",
+    "torch": "none",
+    "lock": {
+      "win": "nodes/requirements-win.txt",
+      "linux": "nodes/requirements-linux.txt",
+      "mac": "nodes/requirements-mac.txt"
+    },
+    "entry": "nodes.main"
+  },
+  "gpu": { "vramMinMb": 0, "cpuAllowed": true }
+}
