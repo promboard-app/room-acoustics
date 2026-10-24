@@ -6,7 +6,7 @@
 
 ![원래 말소리와 성당 공간 울림을 입힌 소리의 파형 · 스펙트로그램 비교](docs/ko/hero.png)
 
-위는 원래 말소리, 아래는 공간 울림(성당, 거리 보통)을 입힌 소리입니다. 각 소리의 위 띠는 파형, 아래 띠는 스펙트로그램(가로 = 시간, 세로 = 소리 높낮이, 밝을수록 큰 소리)입니다. 말소리 사이 빈틈이 울림으로 채워지고, 말이 끝난 뒤에도 울림 꼬리가 3초 이어집니다. [원래 소리 듣기](docs/ko/audio/original.mp3) · [성당 듣기](docs/ko/audio/reverb-cathedral.mp3)
+위는 원래 말소리, 아래는 공간 울림(성당, 거리 보통)을 입힌 소리입니다. 각 소리의 위 띠는 파형, 아래 띠는 스펙트로그램(가로 = 시간, 세로 = 소리 높낮이, 밝을수록 큰 소리)입니다. 말소리 사이 빈틈이 울림으로 채워지고, 말이 끝난 뒤에도 울림 꼬리가 3초 이어집니다. [원래 소리 듣기](docs/ko/audio/original.mp3?raw=true) · [성당 듣기](docs/ko/audio/reverb-cathedral.mp3?raw=true)
 
 - 플러그인 id: `promboard.room-acoustics`
 - 필요한 앱: PromBoard 1.0.2 이상
@@ -43,16 +43,16 @@
 
 ## 들어 보기
 
-| 무엇 | 소리 파일(mp3) |
+| 무엇 | 소리 파일(mp3, 누르면 내려받습니다) |
 |---|---|
-| 원래 소리 | [듣기](docs/ko/audio/original.mp3) |
-| 공간 울림 · 거리 보통 | [욕실](docs/ko/audio/reverb-bathroom.mp3) · [작은 방](docs/ko/audio/reverb-small-room.mp3) · [거실](docs/ko/audio/reverb-living-room.mp3) · [강당](docs/ko/audio/reverb-hall.mp3) · [성당](docs/ko/audio/reverb-cathedral.mp3) · [터널](docs/ko/audio/reverb-tunnel.mp3) |
-| 공간 울림 · 강당 | [가까이](docs/ko/audio/reverb-hall-near.mp3) · [보통](docs/ko/audio/reverb-hall.mp3) · [멀리](docs/ko/audio/reverb-hall-far.mp3) |
-| 잡음 줄이기 | [잡음 섞인 소리](docs/ko/audio/noisy.mp3) → [약하게](docs/ko/audio/denoise-light.mp3) · [보통](docs/ko/audio/denoise-normal.mp3) · [강하게](docs/ko/audio/denoise-strong.mp3) |
+| 원래 소리 | [듣기](docs/ko/audio/original.mp3?raw=true) |
+| 공간 울림 · 거리 보통 | [욕실](docs/ko/audio/reverb-bathroom.mp3?raw=true) · [작은 방](docs/ko/audio/reverb-small-room.mp3?raw=true) · [거실](docs/ko/audio/reverb-living-room.mp3?raw=true) · [강당](docs/ko/audio/reverb-hall.mp3?raw=true) · [성당](docs/ko/audio/reverb-cathedral.mp3?raw=true) · [터널](docs/ko/audio/reverb-tunnel.mp3?raw=true) |
+| 공간 울림 · 강당 | [가까이](docs/ko/audio/reverb-hall-near.mp3?raw=true) · [보통](docs/ko/audio/reverb-hall.mp3?raw=true) · [멀리](docs/ko/audio/reverb-hall-far.mp3?raw=true) |
+| 잡음 줄이기 | [잡음 섞인 소리](docs/ko/audio/noisy.mp3?raw=true) → [약하게](docs/ko/audio/denoise-light.mp3?raw=true) · [보통](docs/ko/audio/denoise-normal.mp3?raw=true) · [강하게](docs/ko/audio/denoise-strong.mp3?raw=true) |
 
-소리와 파형 · 스펙트로그램을 함께 보는 영상(재생 위치 선이 움직입니다): [공간 울림 6가지](docs/ko/listen-spaces.mp4) · [잡음 줄이기 세기별](docs/ko/listen-denoise.mp4)
+소리와 파형 · 스펙트로그램을 함께 보는 영상(mp4, 재생 위치 선이 움직입니다): [공간 울림 6가지](docs/ko/listen-spaces.mp4?raw=true) · [잡음 줄이기 세기별](docs/ko/listen-denoise.mp4?raw=true)
 
-말소리는 PromBoard 튜토리얼 내레이션(Seed Audio 로 만든 소리)입니다. 잡음 섞인 소리는 이 말소리 앞뒤에 0.6초씩 빈 곳을 두고, 말소리보다 10dB 작은 '쉬—' 잡음을 섞어 만들었습니다. 결과는 이 저장소의 `nodes/main.py` 를 그대로 돌려 얻었고 mp3(96kbps)로 줄였습니다.
+말소리는 PromBoard 튜토리얼 내레이션(Seed Audio 로 만든 소리)입니다. 잡음 섞인 소리는 이 말소리 앞뒤에 0.6초씩 빈 곳을 두고, 말소리보다 10dB 작은 '쉬—' 잡음을 섞어 만들었습니다. 결과는 이 저장소의 `nodes/main.py` 를 그대로 돌려 얻었고 mp3(96kbps)로 줄였습니다. GitHub 화면 안에서는 소리 · 영상이 재생되지 않아서 링크를 누르면 파일을 내려받습니다.
 
 ## 어떻게 동작하나
 
@@ -101,7 +101,7 @@ docs/                         이 README 의 그림 · 움짤 · 소리 · 영�
 
 ![Waveform and spectrogram of the original speech and of the same speech with cathedral room reverb](docs/en/hero.png)
 
-Top: the original speech. Bottom: the same speech with room reverb (Cathedral, medium distance). For each sound the upper strip is the waveform and the lower strip is the spectrogram (time to the right, pitch upward, brighter = louder). The gaps between words fill with reverb, and a 3-second reverb tail follows the last word. [Listen to the original](docs/en/audio/original.mp3) · [Listen to the cathedral](docs/en/audio/reverb-cathedral.mp3)
+Top: the original speech. Bottom: the same speech with room reverb (Cathedral, medium distance). For each sound the upper strip is the waveform and the lower strip is the spectrogram (time to the right, pitch upward, brighter = louder). The gaps between words fill with reverb, and a 3-second reverb tail follows the last word. [Listen to the original](docs/en/audio/original.mp3?raw=true) · [Listen to the cathedral](docs/en/audio/reverb-cathedral.mp3?raw=true)
 
 - Plugin id: `promboard.room-acoustics`
 - Requires PromBoard 1.0.2 or later
@@ -140,16 +140,16 @@ In the same hall, moving farther away lowers the share of the direct sound and r
 
 ### Listen
 
-| What | Sound files (MP3) |
+| What | Sound files (MP3, click to download) |
 |---|---|
-| Original | [listen](docs/en/audio/original.mp3) |
-| Room reverb · medium distance | [Bathroom](docs/en/audio/reverb-bathroom.mp3) · [Small room](docs/en/audio/reverb-small-room.mp3) · [Living room](docs/en/audio/reverb-living-room.mp3) · [Hall](docs/en/audio/reverb-hall.mp3) · [Cathedral](docs/en/audio/reverb-cathedral.mp3) · [Tunnel](docs/en/audio/reverb-tunnel.mp3) |
-| Room reverb · Hall | [Near](docs/en/audio/reverb-hall-near.mp3) · [Medium](docs/en/audio/reverb-hall.mp3) · [Far](docs/en/audio/reverb-hall-far.mp3) |
-| Noise reduction | [Noisy speech](docs/en/audio/noisy.mp3) → [Light](docs/en/audio/denoise-light.mp3) · [Normal](docs/en/audio/denoise-normal.mp3) · [Strong](docs/en/audio/denoise-strong.mp3) |
+| Original | [listen](docs/en/audio/original.mp3?raw=true) |
+| Room reverb · medium distance | [Bathroom](docs/en/audio/reverb-bathroom.mp3?raw=true) · [Small room](docs/en/audio/reverb-small-room.mp3?raw=true) · [Living room](docs/en/audio/reverb-living-room.mp3?raw=true) · [Hall](docs/en/audio/reverb-hall.mp3?raw=true) · [Cathedral](docs/en/audio/reverb-cathedral.mp3?raw=true) · [Tunnel](docs/en/audio/reverb-tunnel.mp3?raw=true) |
+| Room reverb · Hall | [Near](docs/en/audio/reverb-hall-near.mp3?raw=true) · [Medium](docs/en/audio/reverb-hall.mp3?raw=true) · [Far](docs/en/audio/reverb-hall-far.mp3?raw=true) |
+| Noise reduction | [Noisy speech](docs/en/audio/noisy.mp3?raw=true) → [Light](docs/en/audio/denoise-light.mp3?raw=true) · [Normal](docs/en/audio/denoise-normal.mp3?raw=true) · [Strong](docs/en/audio/denoise-strong.mp3?raw=true) |
 
-Videos with the sound, waveform and spectrogram together (a line follows the playback position): [six spaces](docs/en/listen-spaces.mp4) · [noise reduction strengths](docs/en/listen-denoise.mp4)
+Videos with the sound, waveform and spectrogram together (MP4, a line follows the playback position): [six spaces](docs/en/listen-spaces.mp4?raw=true) · [noise reduction strengths](docs/en/listen-denoise.mp4?raw=true)
 
-The speech is the PromBoard tutorial narration (made with Seed Audio). The noisy speech adds 0.6 s of silence before and after it and mixes in a hiss 10 dB quieter than the speech. All results come from running this repository's `nodes/main.py` as is, encoded to MP3 (96 kbps).
+The speech is the PromBoard tutorial narration (made with Seed Audio). The noisy speech adds 0.6 s of silence before and after it and mixes in a hiss 10 dB quieter than the speech. All results come from running this repository's `nodes/main.py` as is, encoded to MP3 (96 kbps). GitHub does not play audio or video inside the page, so the links download the files.
 
 ### How it works
 
