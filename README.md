@@ -81,6 +81,8 @@ docs/                         이 README 의 그림 · 움짤 · 소리 · 영�
 docs/scripts/                 위 그림 · 소리를 nodes/main.py 로 다시 만드는 스크립트(make_audio.py → make_visuals.py)
 ```
 
+README 그림 · 소리 다시 만들기(저장소 루트에서, 잠금 파일 패키지 · matplotlib · Pillow · ffmpeg · Pretendard 글꼴이 있는 파이썬, 내레이션은 PromBoard 앱 저장소 `public/assets/tutorial/narration-ko.mp3`): `python docs/scripts/make_audio.py narration-ko.mp3 <작업 폴더> && python docs/scripts/make_visuals.py <작업 폴더> docs ko` (영어판은 narration-en.mp3 와 `en hero,distance,denoise,mp4`, mp3 는 작업 폴더에서 `docs/<언어>/audio/` 로 옮깁니다).
+
 레지스트리에 올리는 zip 은 PromBoard 앱 저장소의 `server/src/tools/packPlugin.ts` 로 만듭니다. `packPlugin.ts` 는 넘겨받은 폴더를 통째로 묶으므로 `git archive HEAD` 로 꺼낸 폴더를 넘깁니다. `.gitattributes` 의 `export-ignore` 로 `docs/` 가 빠집니다.
 
 ## 함께 쓰는 오픈소스
@@ -171,4 +173,4 @@ The even purple layer across the whole spectrogram is the noise; the bright hori
 
 pyroomacoustics 0.10.1 (MIT), numpy · scipy (BSD-3-Clause), soundfile 0.14.0 (BSD-3-Clause, bundles libsndfile under LGPL-2.1), Cython (Apache-2.0), cffi (MIT), pycparser (BSD-3-Clause), typing-extensions (PSF). The packages are downloaded from PyPI during **Prepare** and are not included in this repository.
 
-The `docs/` folder holds the pictures, animations, sounds and videos for this README (the animations are shared by both languages) and is left out of the plugin zip; `docs/scripts/` rebuilds them from `nodes/main.py` (`make_audio.py`, then `make_visuals.py`). `packPlugin.ts` (PromBoard app repository, `server/src/tools/`) packs whatever folder it is given, so pass it a folder exported with `git archive HEAD`; `.gitattributes` (`export-ignore`) drops `docs/` there.
+The `docs/` folder holds the pictures, animations, sounds and videos for this README (the animations are shared by both languages) and is left out of the plugin zip; `docs/scripts/` rebuilds them from `nodes/main.py`: `python docs/scripts/make_audio.py narration-en.mp3 <work dir> && python docs/scripts/make_visuals.py <work dir> docs en hero,distance,denoise,mp4` (repository root, a Python with the lock-file packages plus matplotlib and Pillow, ffmpeg and the Pretendard font; the narration is `public/assets/tutorial/narration-en.mp3` in the PromBoard app repository; copy the MP3 files from the work dir to `docs/en/audio/`). `packPlugin.ts` (PromBoard app repository, `server/src/tools/`) packs whatever folder it is given, so pass it a folder exported with `git archive HEAD`; `.gitattributes` (`export-ignore`) drops `docs/` there.
